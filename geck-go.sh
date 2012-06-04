@@ -32,8 +32,7 @@ echo '[[ -s "/etc/profile.d/rvm.sh" ]] && . "/etc/profile.d/rvm.sh"' >> /root/.b
 gem install passenger --no-ri --no-rdoc
 passenger-install-nginx-module
 
-echo "scheisskopf" > /etc/hostname
+echo "scheisskopf" >> /etc/hostname
 echo "50.116.6.169 scheisskopf scheisskopf.falling.com" > /etc/hosts
 
-echo "Almost done - copy and paste line below to enable RVM."
-echo "source /etc/profile.d/rvm.sh"
+reboot
