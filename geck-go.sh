@@ -22,8 +22,9 @@ apt-get -y install python-software-properties
 apt-add-repository -y ppa:chris-lea/node.js
 apt-get update
 apt-get -y install emacs curl gcc make
+apt-get -y install nodejs npm nodejs-dev 
 curl -L get.rvm.io | bash -s stable
-apt-get -y install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion nodejs npm nodejs-dev redis-server libcurl4-openssl-dev
+apt-get -y install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion redis-server libcurl4-openssl-dev
 source /etc/profile.d/rvm.sh
 
 # Install RVM. Requires dumb user input
@@ -54,6 +55,8 @@ passenger-install-nginx-module
 echo "$server_hostname" > /etc/hostname
 echo "$server_ip $server_hostname $server_fully_articulated"
 
-gem install god
-
+gem install god --no-ri --no-rdoc
+cd /home/deployer
+mkdir apps
+chmod 7777 apps -R
 reboot
