@@ -1,0 +1,33 @@
+ssh-keygen -R <servername>
+scp ./geck-go.sh root@<servername>:/root/geck-go.sh
+ssh root@<servername>
+chmod +x ./geck-go.sh
+./geck-go.sh
+
+wait for rvm prompt, then press q
+
+press enter for nginx
+select option 1 for nginx
+press enter to select nginx install directory
+press enter once more
+copy and paste the line offered
+
+emacs /opt/nginx/conf/nginx.conf
+paste the following lines at or around line 62 of opt/nginx/conf/nginx.conf
+    location /cnn/ {
+        rewrite ^/cnn/(.*) /$1 break;
+        proxy_pass   http://www.cnn.com;
+     }
+
+     location /yahoo/ {
+       rewrite ^/yahoo/(.*)$ /$1 break;
+       proxy_pass http://www.yahoo.com;
+     }
+ctrl-x ctrl-s to save
+ctrl-x ctrl-c to quit
+
+cd /opt/nginx/sbin
+./nginx
+
+If you need to restart nginx:
+./nginx -s reload
