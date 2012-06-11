@@ -73,10 +73,14 @@ namespace :deploy do
   task :ensure_god_running do
     run "cd / && god"
   end
+  task :db_migrate do
+    run "cd /apps/#{application}/current && rake db:create && rake db:migrate"
+  end
   before "deploy:start", "ensure_god_running"
   before "deploy:stop", "ensure_god_running"
   before "deploy", "deploy:mkdirs"
   before "deploy", "deploy:create_god_script"
+  #after "deploy", "deploy:db_migrate"
   after "deploy", "deploy:bundle"
   after "deploy", "deploy:start"
 end
