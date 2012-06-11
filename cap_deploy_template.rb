@@ -6,7 +6,10 @@
 APPLICATION_NAME = "FayeServer"
 SCRIPT_NAME = "faye"
 REPOSITORY = "git://github.com/HungryAcademyTeam4/FayeServer.git"
-START_COMMAND = 'rainbows /apps/FayeServer/current/faye.ru -c /apps/FayeServer/current/rainbows.conf -E production -p 9000'
+START_COMMAND = "unicorn /apps/#{APPLICATION_NAME}/current/config.ru -p 3001"
+
+# Rainbows start example
+# START_COMMAND = "rainbows /apps/#{APPLICATION_NAME}/current/faye.ru -c /apps/#{APPLICATION_NAME}/current/rainbows.conf -E production -p 9000"
 
 # This assumes you want to launch to Falling Foundry.
 # If you want to launch to Falling Garden, launch with
