@@ -4,17 +4,17 @@
 # scp ./geck-go.sh root@fallinggarden.com:/root/geck-go.sh
 
 # ------------------------------------------------
-server_ident="fallingfoundry"
-server_hostname="decoverly"
-server_fully_articulated="decoverly.falling.com"
-server_ip="50.116.60.38"
+# server_ident="fallingfoundry"
+# server_hostname="decoverly"
+# server_fully_articulated="decoverly.falling.com"
+# server_ip="50.116.60.38"
 # ------------------------------------------------
 
 # ------------------------------------------------
-# server_ident="fallinggarden"
-# server_hostname="scheisskopf"
-# server_fully_articulated="scheisskopf.falling.com"
-# server_ip="50.116.6.169"
+server_ident="fallinggarden"
+server_hostname="scheisskopf"
+server_fully_articulated="scheisskopf.falling.com"
+server_ip="50.116.6.169"
 # ------------------------------------------------
 
 #This is required for apt-add-repository
